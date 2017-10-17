@@ -7,23 +7,22 @@ module boole (
 
   var i; 
   
-  
   always {
     outboo[7:0] = 0;
     case(alufn[3:0]){
-      b1000: // AND
+      b1000: // AND operation
       for (i=0; i<8; i++){
         outboo[i] = a[i] & b[i];
         }
-      b1110: // OR
+      b1110: // OR operation
       for (i=0; i<8; i++){
         outboo[i] = a[i] | b[i];      
         }
-      b0110: // XOR
+      b0110: // XOR operation
       for (i=0; i<8; i++){
         outboo[i] = a[i] ^ b[i];
         }
-      b1010: // "A"
+      b1010: // "A" operation
       for (i=0; i<8; i++){
         outboo[i] = a[i];
       }
