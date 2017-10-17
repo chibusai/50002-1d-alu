@@ -3,7 +3,7 @@ module adder(  // performs addition, subtraction, multiplication and modulo
   output sum[0], 
   output carry[0]
   ) {
-
+  
   always {
     // sum and carry calculated based on Boolean algebra
     sum = (in[0] ^ in[1]) ^ in[2];
