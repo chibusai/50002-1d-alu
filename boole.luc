@@ -1,0 +1,32 @@
+module boole (
+  input a[8],
+  input b[8],
+  input alufn[6],
+  output outboo[8]
+  ) {
+
+  var i; 
+  
+  
+  always {
+    outboo[7:0] = 0;
+    case(alufn[3:0]){
+      b1000: // AND
+      for (i=0; i<8; i++){
+        outboo[i] = a[i] & b[i];
+        }
+      b1110: // OR
+      for (i=0; i<8; i++){
+        outboo[i] = a[i] | b[i];      
+        }
+      b0110: // XOR
+      for (i=0; i<8; i++){
+        outboo[i] = a[i] ^ b[i];
+        }
+      b1010: // "A"
+      for (i=0; i<8; i++){
+        outboo[i] = a[i];
+      }
+    }
+  }   
+}

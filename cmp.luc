@@ -1,0 +1,20 @@
+module cmp (
+  input z,
+  input v,
+  input n,
+  input alufn[6], //alufn[2:1] decide which comparator operation to be run
+  output outcmp[8] // the LSB is the only one with changing value
+  ) {
+
+  always {
+    outcmp[7:1] = 0; // all bits except the LSB are 0   
+    case(alufn[2:1]){
+    b01: // equal
+    outcmp[0] = z;
+    b10: // less than
+    outcmp[0] = n ^ v;
+    b11: // less than or equal to
+    outcmp[0] = z | (n ^ v);
+    }
+  }
+}
