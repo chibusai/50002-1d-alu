@@ -43,17 +43,18 @@ module alu (
     case(alufn[5:4]){
     
     b00:
-    outalu = adder8.s;
+    outalu = adder8.s; // output adder
     
     b01:
-    outalu = boole.outboo;
+    outalu = boole.outboo; // output boole
         
     b10:
-    outalu = shift.outshi;
+    outalu = shift.outshi; // output shifter
         
     b11:
-    outalu = cmp.outcmp;
+    outalu = cmp.outcmp; // output comparator
         
     }
   }
 }
+
